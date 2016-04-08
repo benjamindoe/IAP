@@ -1,0 +1,54 @@
+﻿/*  ===========
+    GLOBAL CSS
+    =========== */
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+.input_wrapper, .button, label {
+	display: block;
+}
+.ValidationError {
+    color: red;
+}
+#ComparePasswords {
+    display: block;
+}
+/*  ===========
+    Wrapper CSS
+    =========== */
+
+.wrapper {
+	min-height: 100%;
+	position: relative;
+}
+
+/* ================
+    Main Header CSS
+   ================ */
+
+.page_header {
+
+}
+
+/* ========================
+    Main "body" content CSS
+   ======================== */
+
+.body {
+    margin-bottom: 50px;
+}
+
+/* ============
+    Footer CSS
+   ============ */
+
+footer {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 50px;
+    width: 100%;
+	text-align: center;
+}

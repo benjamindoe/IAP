@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Buy-a-Dog | Order Page</title>
+		<link rel="icon" href="images/favicon.png" type="image/png">
+		<link rel="stylesheet" href="js/jQuery/jquery.mobile-1.4.5.min.css" />
+		<link rel="stylesheet" type="text/css" href="stylesheet.css">
+		<script src="js/jQuery/jquery-1.11.3.min.js"></script>
+		<script src="js/jQuery/jquery.mobile-1.4.5.min.js"></script>
+		<script src="js/header.js"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+		<script src="js/order-form.js"></script>
+			<header>
+				<div class="logo--wrapper">
+					<div class="logo">
+						<img class="logo__img" src="images/logo.png">
+						<h1 class="logo__title">Buy-a-Dog</h1>
+					</div>
+				</div>
+				<nav class="header__nav">
+					<a href="index.html">Home</a>
+					<a href="">Order Form</a>
+					<a href="slideshow.html">Slide Show</a>
+					<a href="report.html">Report</a>
+				</nav>
+			</header>
+			<div class="body">
+				<div class="body__content">
+					<form>
+						<fieldset>
+							<legend>Order a Dog</legend>
+							<input type="text" name="firstName" id="firstName" placeholder="First Name" required>
+							<input type="text" name="surname" id="surname" placeholder="Surname" required>
+							<input type="email" name="email" id="email" placeholder="example@email.com" required>
+							<select name="dogname" id="dogName" required>
+								<option disabled selected value="">Select a breed</option>
+							</select>
+							<select name="dogcolor" id="dogColor" required>
+								<option disabled selected value="">Select a color</option>
+							</select>
+							<input type="submit" value="Order">
+						</fieldset>
+					</form>
+				</div>
+				<div class="body__sidebar">
+					<div class="ad ad1">
+					</div>
+					<div class="ad ad2">
+					</div>
+				</div>
+			</div>
+			<footer>
+				&copy; Benjamin Doe 2015
+			</footer>
+		</div>
+	</body>
+</html>

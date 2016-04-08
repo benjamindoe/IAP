@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="XMLStylesheet.xsl"?>
+<dogs>
+	<breed>
+		<name>Beagle</name>
+		<size>Small</size>
+		<colors>
+			<color>Brown and White</color>
+			<color>Orange and White</color>
+			<color>Red and White</color>
+			<color>Lemon and White</color>
+			<color>White and Tan</color>
+			<color>Tri-colour</color>
+			<color>Chocolate Tri</color>
+		</colors>
+	</breed>
+
+	<breed>
+		<name>West Highland Terrier</name>
+		<size>Small</size>
+		<colors>
+			<color>White</color>
+		</colors>
+	</breed>
+
+	<breed>
+		<name>Golden Retriever</name>
+		<size>Medium</size>
+		<colors>
+			<color>Light Golden</color>
+			<color>Golden</color>
+			<color>Dark Golden</color>
+			<color>Cream</color>
+		</colors>
+	</breed>
+
+	<breed>
+		<name>Labrador Retriever</name>
+		<size>Medium</size>
+		<colors>
+			<color>Yellow</color>
+			<color>Chocolate</color>
+			<color>Black</color>
+			<color>Ivory</color>
+		</colors>
+	</breed>
+
+	<breed>
+		<name>Great Dane</name>
+		<size>Large</size>
+		<colors>
+			<color>Black</color>
+			<color>Blue</color>
+			<color>Fawn</color>
+			<color>Mantle</color>
+			<color>Brindle</color>
+			<color>Harlequin</color>
+		</colors>
+	</breed>
+</dogs>

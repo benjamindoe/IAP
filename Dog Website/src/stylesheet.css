@@ -1,0 +1,391 @@
+@font-face  {
+	font-family: "Ubuntu";
+	src: url("Ubuntu.woff") format('woff'),
+		 url("Ubuntu.ttf") format('truetype');
+}
+
+/*	=========================
+	Global, wrapper and overall CSS
+	========================= */
+
+html, body {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	font-family: "Ubuntu", "Helvetica", Arial, Sans-serif;
+	font-size: 14px;
+	height: 100%;
+}
+input, select,button, label {
+	display: block;
+	margin: 5px auto;
+	width: 300px;
+}
+label {
+	margin: 0 auto;
+}
+.wrapper {
+	min-height: 100%;
+	position: relative;
+}
+
+/*	================
+	Header and Logo CSS
+	================ */
+
+.logo--wrapper {
+	text-align: center;
+	background-color: lightblue;
+}
+.logo {
+	overflow: hidden;
+	display: inline-block;
+	margin: 5px 0;
+}
+.logo .logo__img {
+	height: 115px;
+	margin: 0 5px;
+}
+.logo .logo__title {
+	margin: 0;
+}
+.header__nav {
+	font-size: 0;
+	color: white;
+	text-align: center;
+	background-color: #1C3C50;
+	z-index:9999;
+}
+header.sticky {
+	padding-bottom: 26px
+}
+header.sticky .header__nav{
+	position:fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+.header__nav a {
+	display: inline-block;
+	font-size: 14px;
+	color: white;
+	text-decoration: none;
+	padding: 5px 10px;
+	transition: 0.5s;
+	-moz-transition: 0.5s;
+	-webkit-transition: 0.5s;
+}
+.header__nav a:hover {
+	background-color: lightblue;
+}
+
+/*	===========
+	Main body CSS
+	=========== */
+
+.body {
+	overflow: hidden;
+	position: relative;
+	margin: 0 auto;
+	padding-bottom: 50px;
+	min-height: 610px;
+	max-width: 1024px;
+}
+.body__content {
+	padding-top: 20px;
+	padding-right: 310px;
+}
+
+/*	=========
+	Sidebar CSS
+	========= */
+
+.body__sidebar {
+	position: absolute;
+	right: 0;
+	top: 10px;
+}
+.ad {
+	height: 250px;
+	width: 250px;
+	background: url('images/advert.png');
+	border:1px solid black;
+	margin: 20px 0;
+}
+
+/*	========
+	Footer CSS
+	======== */
+
+footer {
+	text-align: center;
+	line-height: 50px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+/*	===========
+	Slideshow CSS
+	=========== */
+
+.slideshow {
+	margin: 0 auto;
+	margin-top:25px;
+	padding: 0 10px;
+	padding-bottom: 125px;
+	padding-top: 10px;
+	width: 500px;
+	height: 435px;
+	text-align: center;
+	position: relative;
+	background-color: #303030;
+}
+.slideshow__inner {
+	position: relative;
+}
+.slideshow__footer {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 120px;
+}
+.slideshow__footer .thumbnail {
+	height: 100px;
+	width: 100px;
+	overflow: hidden;
+	display: inline-block;
+	margin: 0 5px;
+	cursor: pointer;
+}
+.thumbnail--window {
+	width: 87%;
+	float: right;
+	overflow-y:	hidden;
+	overflow-x: scroll;
+}
+.thumbnail--window::-webkit-scrollbar {
+	height: 7px;
+}
+.thumbnail--window::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+.thumbnail--window::-webkit-scrollbar-thumb {
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	background: #CFCFCF;
+}
+.thumbnail--slider {
+	width: 550px;
+}
+.slideshow__window {
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+}
+.btn {
+	cursor: pointer;
+}
+.btn-slide {
+	position: absolute;
+	top:50%;
+	margin-top: -20px;
+	height: 40px;
+	width: 40px;
+	overflow: hidden;
+	background: transparent url("sprites/slideshow.png");
+	text-indent: 100%;
+	z-index: 999999;
+}
+.next-slide {
+	right: 0;
+	background-position: 329px 50px;
+}
+.next-slide:hover {
+	background-position: 209px 50px;
+}
+.slideshow .prev-slide {
+	left: 0;
+	background-position: -10px 50px;
+}
+.prev-slide:hover {
+	background-position: 270px 50px;
+}
+.next-slide:active {
+	background-position: 89px 50px;
+}
+.prev-slide:active {
+	background-position: 150px 50px;
+}
+.grow {
+	position: absolute;
+	left: 5px;
+	bottom: 5px;
+	padding: 5px;
+	border: 1px solid white;
+	color: white;
+	background-color: #303030;
+	width: 45px;
+	opacity: 0.7;
+}
+.grow:hover {
+	opacity: 0.9;
+}
+.grow:active {
+	opacity: 0.4;
+}
+.slides {
+	height: 100%;
+	width: 2500px;
+	font-size: 0;
+}
+.slides:before {
+	content: '';
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+	margin-right: -0.25em;
+}
+.slide {
+	width:500px;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0;
+}
+.slide__img {
+	width: 100%;
+}
+figure.slide {
+	position: relative;
+}
+.slide figcaption {
+	position: absolute;
+	background: rgba(0,0,0,0.6); 
+	color: white; 
+	font-size: 11pt;
+	width: 95%;
+	left: 0;
+	right: 0;
+	top: 0; 
+	padding: 8px 0;
+	margin:	0 auto;
+	margin-top: 5px;
+}
+
+/*	=============
+	XML Query Styling
+	============= */
+
+.query_output {
+	margin-top: 20px;
+}
+
+
+/*	=================
+	Order form overlay CSS
+	================= */
+
+.overlay {
+	background-color: white;
+	position: absolute;
+	top: 50%;
+	height: 200px;
+	margin-top: -100px;
+	left: 40px;
+	right: 40px;
+	z-index: 50;
+	border-radius: 5px; 
+	text-align: center;
+}
+.overlay table	{
+	border-collapse: collapse;
+	margin: 0 auto;
+	width: 50%;
+}
+.overlay button {
+	margin-top: 10px;
+}
+.overlay table, .overlay td {
+	border: 1px solid black;
+}
+.overlay--backdrop {
+	background-color: black;
+	opacity: 0.7;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+@media screen and (max-width: 1024px){
+
+	/*	============
+		Mobile body CSS
+		============ */
+
+	.body {
+		max-width: 100%;
+	}
+	.body__content {
+		padding: 15px;
+	}
+
+	/*	==============
+		Mobile sidebar CSS
+		============== */
+
+	.body__sidebar {
+		position: static;
+		text-align: center;
+	}
+	.ad {
+		display: inline-block;
+		margin: 0 10px;
+		width: 200px;
+		height: 200px;
+	}
+
+	/*	=====================
+		Mobile logo and header CSS
+		===================== */
+
+	.logo .logo__img {
+		height: 75px;
+	}
+	.logo .logo__title {
+		font-size: 18pt;
+	}
+	header.sticky {
+		padding-bottom: 44px;
+	}
+	.header__nav::before {
+		content: '';
+		height: 40px;
+		width: 40px;
+		display: block;
+		background: url('images/hamburger.png') no-repeat 10px 8px;
+		background-size: 30px;
+		margin: 0 auto;
+		cursor: pointer;
+	}
+	.header__nav {
+		max-height: 40px;
+		margin: 2px 3px;
+		border-radius: 5px;
+		overflow: hidden;
+		transition: 0.5s ease;
+		-moz-transition: 0.5s ease;
+		-webkit-transition: 0.5s ease;
+	}
+	.header__nav.active {
+		max-height: 300px;
+	}
+	.header__nav a {
+		display: block;
+		font-size: 16px;
+	}
+}

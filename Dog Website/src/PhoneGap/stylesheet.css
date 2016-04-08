@@ -1,0 +1,331 @@
+@font-face  {
+	font-family: "Ubuntu";
+	src: url("Ubuntu.woff") format('woff'),
+		 url("Ubuntu.ttf") format('truetype');
+}
+
+/*	=========================
+	Global, wrapper and overall CSS
+	========================= */
+
+html, body {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	font-family: "Ubuntu", "Helvetica", Arial, Sans-serif;
+	font-size: 14px;
+	height: 100%;
+}
+input, select {
+	display: block;
+	margin: 5px auto;
+	width: 300px;
+}
+a, figcaption, p, input, select, label {
+	text-shadow: none; 
+}
+/*	================
+	Header and Logo CSS
+	================ */
+
+.wrapper {
+	min-height: 100%;
+	position: relative;
+}
+.logo--wrapper {
+	text-align: center;
+	background-color: lightblue;
+}
+.logo {
+	overflow: hidden;
+	display: inline-block;
+	margin: 5px 0;
+}
+.logo .logo__img {
+	height: 75px;
+	margin: 0 5px;
+}
+.logo .logo__title {
+	font-size: 18pt;
+	margin: 0;
+}
+.header__nav {
+	font-size: 0;
+	text-align: center;
+	background-color: #1C3C50;
+	z-index:9999;	
+	max-height: 40px;
+	margin: 2px 3px;
+	border-radius: 5px;
+	overflow: hidden;
+	transition: 0.5s ease;
+	-moz-transition: 0.5s ease;
+	-webkit-transition: 0.5s ease;
+}
+header.sticky {
+	padding-bottom: 44px;
+}
+header.sticky .header__nav{
+	position:fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+.header__nav::before {
+	content: '';
+	height: 40px;
+	width: 40px;
+	display: block;
+	background: url('images/hamburger.png') no-repeat 10px 8px;
+	background-size: 30px;
+	margin: 0 auto;
+	cursor: pointer;
+}
+.header__nav.active {
+	max-height: 300px;
+}
+.header__nav a,
+.header__nav a:visited {
+	transition: 0.5s;
+	-moz-transition: 0.5s;
+	-webkit-transition: 0.5s;
+	padding: 5px 10px;
+	text-decoration: none;
+	color: white;
+	display: block;
+	font-size: 16px;
+	font-weight: normal;
+}
+.header__nav a:hover {
+	background-color: lightblue;
+}
+
+/*	===========
+	Main body CSS
+	=========== */
+
+.body {
+	overflow: hidden;
+	position: relative;
+	margin: 0 auto;
+	padding-bottom: 50px;
+	min-height: 610px;
+}
+.body__content {
+	padding: 15px;
+}
+
+/*	=========
+	Sidebar CSS
+	========= */
+
+.body__sidebar {
+	position: static;
+	text-align: center;
+}
+.ad {
+	display: inline-block;
+	height: 155px;
+	width: 155px;
+	background: url('images/advert.png');
+	background-size: 100% 100%;
+	border:1px solid black;
+}
+
+/*	========
+	Footer CSS
+	======== */
+
+footer {
+	text-align: center;
+	line-height: 50px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+/*	===========
+	Slideshow CSS
+	=========== */
+
+.slideshow {
+	margin: 0 auto;
+	padding: 0 10px;
+	padding-bottom: 125px;
+	padding-top: 10px;
+	width: 300px;
+	height: 275px;
+	text-align: center;
+	position: relative;
+	background-color: #303030;
+}
+.slideshow__inner {
+	position: relative;
+}
+.slideshow__footer {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 120px;
+}
+.slideshow__footer .thumbnail {
+	height: 100px;
+	width: 100px;
+	overflow: hidden;
+	display: inline-block;
+	margin: 0 5px;
+	cursor: pointer;
+}
+.thumbnail--window {
+	margin-left: 70px;
+	overflow-y:	hidden;
+	overflow-x: scroll;
+}
+.thumbnail--window::-webkit-scrollbar {
+	height: 7px;
+}
+.thumbnail--window::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+.thumbnail--window::-webkit-scrollbar-thumb {
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	background: #CFCFCF;
+}
+.thumbnail--slider {
+	width: 550px;
+}
+.slideshow__window {
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+}
+.btn {
+	cursor: pointer;
+}
+.btn-slide {
+	position: absolute;
+	top:50%;
+	margin-top: -20px;
+	height: 40px;
+	width: 40px;
+	overflow: hidden;
+	background: transparent url("sprites/slideshow.png");
+	text-indent: 100%;
+	z-index: 999;
+}
+.next-slide {
+	right: 0;
+	background-position: 329px 50px;
+}
+.next-slide:hover {
+	background-position: 209px 50px;
+}
+.slideshow .prev-slide {
+	left: 0;
+	background-position: -10px 50px;
+}
+.prev-slide:hover {
+	background-position: 270px 50px;
+}
+.next-slide:active {
+	background-position: 89px 50px;
+}
+.prev-slide:active {
+	background-position: 150px 50px;
+}
+.grow {
+	position: absolute;
+	left: 5px;
+	bottom: 5px;
+	padding: 5px;
+	border: 1px solid white;
+	color: white;
+	background-color: #303030;
+	width: 45px;
+	opacity: 0.7;
+}
+.grow:hover {
+	opacity: 0.9;
+}
+.grow:active {
+	opacity: 0.4;
+}
+.slides {
+	height: 100%;
+	width: 1500px;
+	font-size: 0;
+}
+.slides:before {
+	content: '';
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+	margin-right: -0.25em;
+}
+.slide {
+	width: 300px;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0;
+}
+.slide__img {
+	width: 100%;
+}
+figure.slide {
+	position: relative;
+}
+.slide figcaption {
+	position: absolute;
+	background: rgba(0,0,0,0.6); 
+	color: white; 
+	font-size: 11pt;
+	width: 95%;
+	left: 0;
+	right: 0;
+	top: 0; 
+	padding: 8px 0;
+	margin:	0 auto;
+	margin-top: 5px;
+}
+
+/*	=================
+	Order form overlay CSS
+	================= */
+
+.overlay {
+	background-color: white;
+	position: absolute;
+	top: 50%;
+	height: 200px;
+	margin-top: -100px;
+	left: 10px;
+	right: 10px;
+	z-index: 50;
+	border-radius: 5px; 
+	text-align: center;
+}
+.overlay table	{
+	border-collapse: collapse;
+	margin: 0 auto;
+	width: 97%;
+}
+.overlay table, .overlay td {
+	border: 1px solid black;
+}
+.overlay button {
+	margin-top: 10px;
+}
+.overlay--backdrop {
+	background-color: black;
+	opacity: 0.7;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}

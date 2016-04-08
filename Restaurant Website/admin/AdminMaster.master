@@ -1,0 +1,19 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="AdminMaster.master.cs" Inherits="AdminMaster" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="header" runat="server">
+    <h1>Restaurant Website</h1>
+    <nav>
+        <a href="admin/">Control Panel</a>
+        <a href="admin/Users.aspx">User Control</a>
+        <a href="admin/Menu.aspx">Menu Control</a>
+    </nav>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="body" Runat="Server">
+    <asp:ContentPlaceHolder ID="body" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+
