@@ -46,6 +46,7 @@ public partial class login : System.Web.UI.Page
                     string hash = reader["password"].ToString();
                     if (BCrypt.Net.BCrypt.Verify(password, hash))
                     {
+                        Session["isLoggedIn"] = true;
                         Session["username"] = username;
                         Session["isAdmin"] = reader["isAdmin"] as bool? ?? false; // reader["isAdmin"] as bool != null ? reader["isAdmin"] as bool : false;
                         string returnUrl = Request.QueryString["returnURL"] != null ? Request.QueryString["returnURL"] : "/";

@@ -8,7 +8,7 @@
         <asp:TextBox runat="server" ID="txtUsername" placeholder="Username"/>
 
         <label>Password:</label>
-        <asp:TextBox runat="server" ID="txtPassword" placeholder="Password"/>
+        <asp:TextBox runat="server" TextMode="password" ID="txtPassword" placeholder="Password"/>
 
         <asp:Button ID="submit" Text="Login" runat="server" OnClick="submit_Click" />
     </form>
