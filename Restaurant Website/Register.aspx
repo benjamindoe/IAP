@@ -29,7 +29,7 @@
         </span>
         <span class="input_wrapper input_confimPassword">
             <label>Confirm Password:</label>
-            <asp:TextBox runat="server" TextMode="password"ID="txtConfirmPassword"/>
+            <asp:TextBox runat="server" TextMode="password" ID="txtConfirmPassword"/>
             <asp:RequiredFieldValidator ID="ConfimPassReq" runat="server" 
                 ErrorMessage="&laquo; (Required)" 
                 ControlToValidate="txtConfirmPassword"
