@@ -6,9 +6,19 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="header" runat="server">
     <h1>Restaurant Website</h1>
-    <nav>
-        <a href="/">Homepage</a>
+    <nav class="header-nav">
+        <div class="header-nav__wrapper">
+            <ul class="header-nav__main">
+                <li><a href="/">Homepage</a></li>
+                <li><a href="/">Menu</a></li>
+            </ul>
+            <ul class="header-nav__user">
+                <li><a href="/">Basket</a></li>
+                <li><a href="/login.aspx" id="loginControl" runat="server">Login</a></li>
+            </ul>
+        </div>
     </nav>
+    <asp:Label runat="server" ID="user"></asp:Label>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="body" Runat="Server">
     <asp:ContentPlaceHolder ID="body" runat="server">

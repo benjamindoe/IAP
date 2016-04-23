@@ -17,7 +17,7 @@ public partial class login : System.Web.UI.Page
 
     /*
      * root username: root
-     *      password: tester
+     *      password: pass
      */
 
 
@@ -71,7 +71,6 @@ public partial class login : System.Web.UI.Page
    
     private void alert(string str)
     {
-
         ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + str + " ')", true);
     }
 
