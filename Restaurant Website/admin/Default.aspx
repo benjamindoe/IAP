@@ -17,6 +17,12 @@
                 <span class="count count--menu" id="menuItemNumber" runat="server"></span>
             </a>
         </div>
+        <div class="aspect aspect1-1 btn control-box control-box--order">
+            <a href="./Menu.aspx">
+                <span class="vertical-align">Order Control</span>
+                <span class="count count--order" id="orderNumber" runat="server"></span>
+            </a>
+        </div>
     </div>
     </form>
 </asp:Content>

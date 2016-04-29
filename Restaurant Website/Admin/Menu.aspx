@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" Runat="Server">
     <form id="form1" runat="server">
-        <asp:GridView ID="GridView1" runat="server" AllowSorting="True" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" DataKeyNames="Id" 
+        <asp:GridView CssClass="admin-grid" ID="GridView1" runat="server" AllowSorting="True" ShowHeaderWhenEmpty="True" AutoGenerateColumns="False" DataKeyNames="Id" 
             DataSourceID="MenuData" OnRowCommand="GridView1_RowCommand" ShowFooter="True" CellPadding="4" ForeColor="#333333" GridLines="None">
             <AlternatingRowStyle BackColor="#F08080" />
             <Columns>

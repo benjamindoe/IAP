@@ -25,7 +25,12 @@ public partial class admin_Default : System.Web.UI.Page
                 int count = (int)cmd.ExecuteScalar();
                 menuItemNumber.InnerText = count.ToString() + " Items in the Menu";
             }
-            con.Close();
+            using (SqlCommand cmd = new SqlCommand("SELECT COUNT(Id) FROM Orders", con))
+            {
+                int count = (int)cmd.ExecuteScalar();
+                orderNumber.InnerText = count.ToString() + " Orders";
+            }
+                con.Close();
         }
     }
 }
