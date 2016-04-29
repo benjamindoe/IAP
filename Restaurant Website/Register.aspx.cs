@@ -13,7 +13,7 @@ public partial class Register : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        Master.BodyTag.Attributes.Add("class", "login");
     }
 
     protected void registerBtn_Click(object sender, EventArgs e)

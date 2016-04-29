@@ -5,11 +5,14 @@
 <html>
 <head runat="server">
     <title></title>
+    <link rel="stylesheet" href="Fonts/font-awesome/css/font-awesome.min.css">
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="Styles/StyleSheet.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-<body>
+<body runat="server" ID="bodyNode">
     <div class="wrapper">
         <header class="page_header">
             <asp:ContentPlaceHolder ID="header" runat="server">

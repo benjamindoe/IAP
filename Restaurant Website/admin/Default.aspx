@@ -3,15 +3,21 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" Runat="Server">
-    <a href="/users">
-        <div>
-            User control
+    <form id="form1" runat="server">
+        <div class="control-box--wrapper">
+        <div class="aspect aspect1-1 btn control-box control-box--users">
+            <a href="./Users.aspx">
+                <span class="vertical-align">User Control</span>
+                <span class="count count--menu" id="userNumber" runat="server"></span>
+            </a>
         </div>
-    </a>
-    <a href="/menu">
-        <div>
-            Menu control
+        <div class="aspect aspect1-1 btn control-box control-box--menu">
+            <a href="./Menu.aspx">
+                <span class="vertical-align">Menu Control</span>
+                <span class="count count--menu" id="menuItemNumber" runat="server"></span>
+            </a>
         </div>
-    </a>
+    </div>
+    </form>
 </asp:Content>
 

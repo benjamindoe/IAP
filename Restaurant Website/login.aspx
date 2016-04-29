@@ -1,17 +1,26 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="login.aspx.cs" Inherits="login" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SubMaster.master" AutoEventWireup="true" CodeFile="login.aspx.cs" Inherits="login" %>
+<%@ MasterType TypeName="SubMaster" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" Runat="Server">
-    <form id="form1" runat="server">
-        <label>Username:</label>
-        <asp:TextBox runat="server" ID="txtUsername" placeholder="Username"/>
+    <div class="panel">
+        <form id="form1" runat="server">
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user fa-fw" aria-hidden="true"></i></span>
+                    <label class="sr-only">Username:</label>
+                    <asp:TextBox CssClass="form-control" runat="server" ID="txtUsername" placeholder="Username"/>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-key fa-fw" aria-hidden="true"></i></span>
+                    <label class="sr-only">Password:</label>
+                    <asp:TextBox CssClass="form-control" runat="server" TextMode="password" ID="txtPassword" placeholder="Password"/>
+                </div>
+                <asp:Button CssClass="btn btn-submit" ID="submit" Text="Login" runat="server" OnClick="submit_Click" />
+            </div>
+        </form>
+        <a class="btn btn-register" href="register.aspx">Register</a>
 
-        <label>Password:</label>
-        <asp:TextBox runat="server" TextMode="password" ID="txtPassword" placeholder="Password"/>
-
-        <asp:Button ID="submit" Text="Login" runat="server" OnClick="submit_Click" />
-    </form>
-    <a href="register.aspx">Register</a>
+    </div>
 </asp:Content>
 

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.UI.HtmlControls;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -12,7 +13,9 @@ public partial class login : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        Master.BodyTag.Attributes.Add("class", "login");
+        if (Session["isLoggedIn"] != null && (bool)Session["isLoggedIn"])
+            returnRedirect();
     }
 
     /*
@@ -20,12 +23,6 @@ public partial class login : System.Web.UI.Page
      *      password: pass
      */
 
-
-
-    /*
-      var returnUrl = Server.UrlEncode(Request.Url.PathAndQuery);
-      Response.Redirect("~/login.aspx?ReturnURL=" + returnUrl);
-    */
 
     protected void submit_Click(object sender, EventArgs e)
     {
@@ -49,9 +46,8 @@ public partial class login : System.Web.UI.Page
                         Session["isLoggedIn"] = true;
                         Session["username"] = username;
                         Session["isAdmin"] = reader["isAdmin"] as bool? ?? false; // reader["isAdmin"] as bool != null ? reader["isAdmin"] as bool : false;
-                        string returnUrl = Request.QueryString["returnURL"] != null ? Request.QueryString["returnURL"] : "/";
                         con.Close();
-                        Response.Redirect(returnUrl);
+                        returnRedirect();
                     }
                     else
                     {
@@ -73,5 +69,9 @@ public partial class login : System.Web.UI.Page
     {
         ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + str + " ')", true);
     }
-
+    private void returnRedirect()
+    {
+        string returnUrl = Request.QueryString["returnURL"] != null ? Request.QueryString["returnURL"] : "/";
+        Response.Redirect(returnUrl);
+    }
 }

@@ -1,15 +1,31 @@
 ﻿<%@ Master Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="AdminMaster.master.cs" Inherits="AdminMaster" %>
-
+<%@ MasterType TypeName="MasterPage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+        <link rel="stylesheet" href="/Styles/Admin.css" type="text/css" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="header" runat="server">
-    <h1>Restaurant Website</h1>
-    <nav>
-        <a href="admin/">Control Panel</a>
-        <a href="admin/Users.aspx">User Control</a>
-        <a href="admin/Menu.aspx">Menu Control</a>
+    <div class="header__bar">
+        <h1>Restaurant Website</h1>
+    </div>
+    <nav class="header-nav">
+        <div class="header-nav__wrapper">
+            <div class="header-nav__main--wrapper">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+                <ul class="header-nav__main">
+                    <li><a href="./">Control Panel</a></li>
+                    <li><a href="./Users.aspx">User Control</a></li>
+                    <li><a href="./Menu.aspx">Menu Control</a></li>
+                </ul>
+            </div>
+            <div class="header-nav__side--wrapper">
+                <ul class="header-nav__side">
+                    <li><a href="/" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i> Go to Site</a></li>
+                </ul>
+            </div>
+        </div>
+
     </nav>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="body" Runat="Server">

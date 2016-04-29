@@ -1,10 +1,35 @@
-﻿/*  ===========
+﻿/*  ============
+    CUSTOM FONTS
+    ============ */
+
+@font-face {
+    font-family: "Roboto";
+    src: url("/Fonts/Roboto-Regular.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Roboto";
+    src: url("/Fonts/Roboto-Thin.ttf") format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Roboto";
+    src: url("/Fonts/Roboto-Medium.ttf") format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/*  ===========
     GLOBAL CSS
     =========== */
+
 html, body {
 	margin: 0;
 	padding: 0;
 	height: 100%;
+    font-family: "Roboto", Helvetica, Verdana, Arial, sans-serif;
 }
 .input_wrapper, .button, label {
 	display: block;
@@ -15,6 +40,30 @@ html, body {
 #ComparePasswords {
     display: block;
 }
+h1 {
+    font-weight: lighter;
+}
+.btn:hover {
+    box-shadow: inset 0 1px 2.5px rgba(0,0,0,.125);
+
+}
+
+/*  ============
+    Aspect Ratio
+    ============ */
+.aspect {
+    position: relative;
+}
+.aspect:before {
+    content: '';
+    display: block;
+}
+.aspect1-1:before {padding-top: 100%;}
+.aspect2-1:before {padding-top: 50%;}
+.aspect4-3:before {padding-top: 75%;}
+.aspect16-9:before {padding-top: 56.25%;}
+.aspect4-1:before {padding-top: 25%;}
+
 /*  ===========
     Wrapper CSS
     =========== */
@@ -22,6 +71,7 @@ html, body {
 .wrapper {
 	min-height: 100%;
 	position: relative;
+    overflow: hidden;
 }
 
 /* ================
@@ -29,42 +79,246 @@ html, body {
    ================ */
 
 .page_header {
-
+    font-weight: lighter;
+    background-color: #CD3700;
+    color: #f6f6f6
+}
+.header__bar {
+    position: relative;
+    padding: 20px 0;
 }
 
-nav ul, nav ul li{
-    display:inline-block;
-    padding: 0;
-    margin: 2px 0;
+.header__bar h1 {
+    text-align: center;
+    margin: 0 auto;
+    width: 80%;
 }
-nav a {
-    text-decoration: none;
-}
+
 .header-nav {
-    padding: 0 10px;
+    z-index: 9999;
 }
-.header-nav__wrapper {
-    position:relative;
-    max-width:1000px;
-    margin:0 auto;
+.header-nav a, .header-nav .fa {
+    text-decoration: none;
+    color: #E3FDFF;
+}
+.header-nav a {
+    border-radius: 5px;
+}
+.header-nav__main--wrapper > .fa, .header-nav__side--wrapper > .fa {
+    padding: 5px;    
+    height: 30px;
+    width: 30px;
+    line-height: 20px;
+    text-align: center;
+    -webkit-transition-delay: .2s;
+    transition-delay: .2s;
+}
+.header-nav__main--wrapper .fa:hover, .header-nav__side--wrapper .fa:hover {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+}
+.header-nav ul, .header-nav li {
+    display: block;
+    padding: 0;
+}
+.header-nav li {
+    margin: 10px 0;
+}
+ul.header-nav__main, ul.header-nav__side {
+    background-color: #800000;
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    white-space: nowrap;
+    margin: 0;
+}
+.header-nav .fa:hover + .header-nav__main,.header-nav__main:hover, .header-nav .fa:hover + ul.header-nav__side, ul.header-nav__side:hover{
+    padding: 5px;
+    max-height: 500px;
+    max-width: 300px;
+}
+.header-nav__main--wrapper {
+    position: absolute;
+    left:5px;
+    top: 5px;
+}
+.header-nav__side--wrapper {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    text-align: right;
 }
 
-.main-nav {
 
-}
-
-.header-nav__user {
-    position:absolute;
-    right:0;
-}
 /* ========================
     Main "body" content CSS
    ======================== */
 
 .body {
+    float: left;
+    width: 100%;
     margin-bottom: 50px;
 }
 
+/*  ====================
+        Default.aspx
+    ==================== */
+.cover-photo {
+    background: url("/Images/je_cover.jpg") no-repeat center center;
+    background-size: cover;
+}
+.example-panel {
+    background-color: #FAFAFA;
+    padding: 10px;
+}
+
+/*  ===================
+        Login Page
+    =================== */
+body.login {
+    overflow: hidden;
+}
+body.login .body {
+    min-height: 100%;
+    height: 100%;
+    position: relative;
+}
+body.login .wrapper {
+    height: 100%;
+}
+body.login .panel {
+    position: absolute;
+    margin: 0;
+    background-color: #CD3700;
+    color: #EFEFEF;
+}
+body.login .btn {
+    color: #111;
+    width: 100%;
+    margin-bottom: 20px;
+}
+body.login .btn-register {
+    background-color: rgba(0,0,0, 0.3);
+    color: #CCC;
+}
+
+body.login .panel .input-group {
+    margin-bottom: 10px;
+}
+
+/*  ==============
+    Food Page CSS
+    ==============*/
+.food-menu {
+    list-style: none;
+    padding: 15px;
+}
+.food-menu li {
+    position: relative;
+    margin: 10px 0;
+    padding: 5px;
+    padding-bottom: 40px;
+    border: 1px #BBB solid;
+    border-radius: 5px;
+}
+.food-menu span {
+    display: block;
+}
+.food-menu .menu__item-title {
+    font-weight: bold;
+}
+.food-menu .menu__item-price {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+.food-menu .menu__item-add {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    font-size: 20px;
+    background-color: #F5DB33;
+    color: #800000;
+}
+.food-menu .menu__item-add:hover {
+    background-color: #EEC900;
+}
+.food-menu .heat-level {
+    display: inline-block;
+    color: red;
+}
+.food-menu .icon-leaf{
+    color:green;
+}
+.food-menu .icon-leaf , .heat-level{
+    padding-left: 5px;
+}
+
+/*  ================
+    Profile Page CSS
+    ================ */
+.panel--profile-page {
+    padding: 15px;
+    width: 300px;
+    margin: 0 auto;
+}
+.panel--profile-page .btn, .panel--profile-page .input-group {
+    margin-top: 10px;
+    width: 100%;
+}
+.panel--profile-page .btn-delete-account {
+    background-color: #FF6666;
+    color: #FFF;
+}
+.panel--profile-page .btn-delete-account:hover {
+    background-color: #CF4444;
+}
+
+/*  ===============
+    Orders Page CSS
+    =============== */
+.order-history {
+    position: relative;
+    padding: 0;
+    border-radius: 5px;
+    list-style: none;
+    overflow: hidden;
+}
+.order-history__order {
+    position: relative;
+    overflow: hidden;
+    border: 1px #BBB solid;
+    padding: 5px;
+    margin: 10px;
+
+}
+.order-history__order > ul{
+    margin: 20px 0;
+}
+.order-history__order-title, .order-history__order-quantity {
+    display: block;
+}
+.order-history__order-quantity {
+    text-indent: 5px;
+}
+.order-history__order-subtotal {
+    font-weight: bold;
+    float:right;
+}
+.pending-wrapper {
+    margin-bottom: 10px;
+}
+.pending-wrapper .fa-check {
+    color: green;
+}
+.pending-wrapper .fa-spinner {
+    color: #F55196;
+}
+.pending-wrapper > span {
+    font-size: 1.5em;
+    line-height: 100%;
+}
 /* ============
     Footer CSS
    ============ */
@@ -74,6 +328,159 @@ footer {
 	left: 0;
 	bottom: 0;
 	height: 50px;
+    line-height: 50px;
     width: 100%;
 	text-align: center;
+    border-top: 1px #DDD solid;
+    background-color: #F1F1F1;
+}
+
+@media screen and (max-device-width: 600px) {
+    .header-nav {
+        position: absolute;
+        top: 0; right: 0; left: 0;
+        height: 0;
+    }
+    .header-nav .fa {
+        background-color: #800000;
+        border-radius: 3px;
+    }
+    .header-nav li a {
+        font-size: 17px;
+    }
+    body.login .panel {
+        top:0; right:0; left:0; bottom: 0;
+        padding: 40px 10px;
+        border-radius:0;
+    }
+    ul.header-nav__main, ul.header-nav__side {
+        overflow:hidden;
+        max-height: 0px;
+        max-width: 0px;
+        line-height: 100%;
+    }
+
+
+    .example-panel img {
+        display: block;
+        max-width: 80%;
+        margin: 5px auto;
+    }
+
+}
+
+@media screen and (min-device-width: 600px) {
+    /*  ==========
+        Header CSS
+        ========== */
+    .header-nav {
+        position: relative;
+        background-color: #800000;
+        height: 30px;
+        padding: 0;
+    }
+    .header-nav .fa-user, .header-nav .fa-bars {
+        display: none;
+    }
+    .header-nav ul, .header-nav ul li{
+        position: relative;
+        display: inline-block;
+        margin: 0;
+    }
+    .header-nav .header-nav__main > li, .header-nav .header-nav__side > li {
+        padding: 0 10px;
+    }
+    .header-nav li > ul {
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 0;
+        overflow: hidden;
+        z-index: 99;
+        transition: height linear 0.3s;
+        -webkit-transition: height linear 0.3s;
+    }
+    .header-nav li:hover > ul {
+        height: auto;
+    }
+    .header-nav li > ul > li {
+        display: block;
+        width: 100%;
+        margin: 0;
+        background-color: #800000;
+    }
+    .header-nav li > ul > li:hover {
+        background-color: #780000;
+    }
+
+    .header-nav li > ul > li a {
+        text-align: center;
+        display: block;
+    }
+    .header-nav li > ul > li:hover a {
+        border: 0;
+    }
+    .side-nav--user-id {
+        display: block;
+        z-index: 999;
+        cursor: default;
+    }
+    .header-nav fa {
+        font-size: larger;
+    }
+    .header-nav__wrapper {
+        position:relative;
+        max-width:1000px;
+        margin:0 auto;
+    }
+    .header-nav__main--wrapper, .header-nav__side--wrapper {
+        position: static;
+        display: inline-block;
+        height: 30px;
+        line-height: 30px;
+    }
+    .header-nav__side--wrapper {
+        float: right;
+    }
+    ul.header-nav__main, ul.header-nav__side {
+        max-height: none;
+        max-width: none;
+        line-height: 30px;
+        height: 30px;
+    }
+    ul.header-nav__main:hover, ul.header-nav__side:hover {
+        max-width: none;
+        max-height: none;
+        padding: 0;
+    }
+    .header-nav li a {
+        padding: 2px;
+    }
+    .header-nav li:hover > a{
+        border-bottom: #E3FDFF solid 1px;
+    }
+    
+
+    .example-panel img {
+        width: 300px;
+        float:left;
+        margin: 5px;
+    }
+
+
+    /*  ===================
+            Login Page
+        =================== */
+    body.login {
+        background-color: #EEE9E9;
+    }
+    body.login .panel {
+        top: 10%; right: 0; bottom: initial; left: 0;
+        width: 95%;
+        margin: 0 auto;
+        max-width: 700px;
+        padding: 20px;
+        -webkit-box-shadow: 0px 0px 45px -5px rgba(0,0,0,0.5);
+        box-shadow: 0px 0px 45px -5px rgba(0,0,0,0.5);
+    }
 }

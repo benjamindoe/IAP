@@ -1,0 +1,75 @@
+﻿/*  ================
+    Admin Header CSS
+    ================ */
+.admin .header-nav {
+    position: relative;
+}
+.admin .header-nav__side--wrapper {
+    bottom: 5px;
+    top: initial;
+}
+.admin .header-nav__side {
+    max-width: none;
+    max-height: none;
+    background-color: transparent;
+}
+.admin .header-nav .fa {
+    background-color: transparent;
+}
+.admin .header-nav__main--wrapper .fa-bars {
+    font-size: 20px;
+    background-color: #800000;
+}
+.admin .header-nav__side li {
+    margin: 0;
+}
+
+
+
+.admin .admin-grid {
+    margin: 20px auto 0 auto;
+    width: 60%;
+    min-width: 320px;
+}
+
+/*  ==================
+    Admin Default.aspx
+    ================== */
+.control-box--wrapper {
+    text-align: center;
+}
+.control-box {
+    margin: 0 auto;
+    width: 200px;
+    margin: 5px;
+    border: 1px solid #DDD;
+}
+.control-box > a {
+    position: absolute;
+    top: 0; right: 0; left: 0; bottom: 0;
+    color: #333;
+}
+.control-box .vertical-align {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin-top: -15px;
+}
+
+.control-box .count {
+    position: absolute;
+    right: 5px;
+    bottom: 0;
+    font-size: 12px;
+    font-style: italic;
+    color:#AAA;
+}
+@media screen and (max-width: 600px) {
+    .admin ul.header-nav__side:hover {
+        padding: 0;
+    }
+    .admin .header-nav {
+        height: 40px;
+    }
+}
